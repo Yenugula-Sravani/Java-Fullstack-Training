@@ -1,0 +1,23 @@
+Today I have tried Netflix Website clone website using HTML and CSS in Real time.
+
+--------------------Netflix Website CLone---------------------
+It is under folder called NetflixCloneWebsite which is in Documents folder
+index.html
+style.css
+----------------------I have used following tags-------------------------
+div tags
+used flex properties
+created nav bar using sections and headers 
+also used footer tag
+And used many different css properties for styling of the website such as following:
+
+---> background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(images/images/header-image.png);
+---> transform: translate(-50%,-50%);
+--->.accordion input[type="radio"]:checked + label + .content{
+
+    max-height: 600px;
+    padding: 30px 20px;
+}
+.accordion input[type="radio"]:checked + label::after{
+    transform: rotate(135deg);
+}

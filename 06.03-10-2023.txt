@@ -1,0 +1,27 @@
+----------------------------E-commerce Website using Javascript----------------------------------------
+
+Today Did user Interface of E-commerce website of all pages of users and admins.
+
+----------------------------E-commerce Website Requriments-----------------------------------
+
+----------UI/UX-----------
+Under Admin:
+  --->index.html
+  ---->orders.html
+  ----->add_products.html
+Under Pages:
+  ---->index.html
+  ----->login.html
+  ----->cart.html
+  ----->orders.html
+  ----->register.html
+  ----->products_details  
+
+  -----------CSS---------
+   index.css
+  -----------Script-------
+  Script.js 
+
+  ----------------------------------------------------------
+
+  Today completed ui/ux and also completed login and register Javascript validations..

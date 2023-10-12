@@ -1,0 +1,36 @@
+1.Today in this class i have learned some css concepts and aligned it to html elements which i have learned yesterday.
+2.Based on the pervious learnings i have created filpkart Home page.
+
+---------------------filpkart Home Page requriments----------------------
+Menu.html
+flex.css
+----------------------I have used following tags-------------------------
+div tags
+used flex properties
+created nav bar using div tags and class properties.
+---------------------------Menu.html--------------------------------
+<div class="logo">
+      <h2>logo</h2>
+      <div class="navigationbar">
+        <p class="p1">Become a seller</p>
+        <p class="p2">sign in</p>
+        <p class="p3">cart</p>
+      </div>
+    </div>
+    <div class="menu">
+      <div class="left">
+        <h1>Looks like you're new here</h1>
+        <h4>Sign up with your mobile number to get started</h4>
+      </div>
+      <div class="menu1">
+        <input type="text" placeholder="Enter mobile number:" />
+        <h6>
+          By continuing, you agree to Flipkart's Terms of Use and Privacy
+          Policy.
+        </h6>
+        <div><input type="button" class="button" value="CONTINUE" /></div>
+      <div><a class="button1"  href="Forms.html">
+        <span>Existing User? log in </span>
+      </a></div>
+      </div>
+    </div>

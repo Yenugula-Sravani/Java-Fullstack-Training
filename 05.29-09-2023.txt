@@ -1,0 +1,17 @@
+Today we have started Javascript Basics and also learned how to use Script in html file.
+-------------I have completed following Javascript Basics-------------
+Varaiables
+Arrays 
+Maps 
+Filter Method And Reduce method
+Spread Operators
+Promises
+-----------------------------Trainee Explained how toDo application-----------------------
+Created real-time todo application using html css Javascript.
+---------------TODO APPLICATION REQURIMENTS--------------------
+Add the todo
+Edit the todo
+Delete the todo
+--------------------Completed TODO Website--------
+
+Trainer Explained how to do E-commerce website using Javascript.
