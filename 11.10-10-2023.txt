@@ -1,0 +1,49 @@
+-------------started Jquery today-----------
+In Jquery learned some basic syntax which is little different from javascript.
+In Jquery insted of document we use $ symbol .
+------To get familiar with jquery we done Form validation Using Jquery--------------
+I have saved that Jquery project in my downloads with name called "Jqueryvalidations".
+---------below is my Jquery projecr---------
+--->below is my jqueryformValidation::
+
+<---------------jquery function declaration------------>
+$(document).ready(function () {
+  $("#form").submit(function (e) {
+    e.preventDefault();
+
+<-------------syntax for jquery--------------->
+    var name = $("#name").val();
+    var password = $("#password").val();
+    var number = $("#number").val();
+    var radio1 = $("#male").val();
+    var radio2 = $("#female").val();
+
+
+<----------Name validation block-------------->
+    $(".error").remove();
+    if (name.length <= 2) {
+      $("#name").after(
+        '<span class="error">**Username must be greater than 2 values</span>'
+      );
+    }
+<------------password validation block------------->
+    if (password === "") {
+      $("#password").after(
+        '<span class="error">**password field should not be empty</span>'
+      );
+    } else {
+      $("#password").after(
+        '<span class="error">**password length must be greater than 8</span>'
+      );
+    }
+ <----------email validation block-------------------->  
+    var email = $("#email").val();
+    var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
+
+    if (!pattern.test(email)) {
+      $("#email").after(
+        '<span class="error">**email must be vaild</span>'
+      );
+    }
+  });
+});

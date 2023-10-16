@@ -1,0 +1,21 @@
+--->At morning session ,we have Quality Training ,In which we learnt how kumaran follows Coding standards.
+--->And also learnt ,from start of the project what is the process invovled upto end of the project.
+--->At the end wrote the Assessment which is based on the Training that happended before and got 84% and got passed.
+
+------Today At afternoon session started Typescript-------------
+Typescript:Is a langugage which is similar to javascript but it is typed langugae means follows syntax perfectly.
+-->It is a development tool that does static checking that means while writing the code IDE throws errors.
+-->It is a development tool ,but your project runs in js file.
+-->for better understanding of Typescript I have done Todo application with using Typescript.
+--->It is there Under TodoTypescript file
+------------Student Portal  using Typescript---------
+SRS of Student Portal:
+  -->Two seperate portals for student and teacher
+  -->student should not see teacher details.
+  --->student is able to enter details of present days and past days and does not able to future days attendance.
+  --->teacher should able to edit or delete the details of particular student and able to upload the student attendance details.
+
+ ---->completed this above project Today successfully---> 
+
+
+ ---------After this we have prepared for Tommorrow Assessment on Javascript, HTML AND CSS-----------
