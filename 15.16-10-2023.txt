@@ -1,0 +1,118 @@
+---------------Today I have started Form validations using Angular---------------
+-->we have two types of validations in Angular.
+   1.Template driven validations
+   2.Reactive Form validations
+-->In our project ,we are using Template driven validations.
+
+-->below is form validation example,on form level we are using.
+       -->(ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm".
+       -->ngSubmit is event used for submiting the form.we should perform this for type submit.
+       -->ngForm is For validating form-level.
+       --> onSubmit(loginForm)--this is function name ,should define in loginComponent.ts file.
+-->if we want to do validation for particular fields,we use ngModel ang ngClass.
+-->Below is the example for validating particular field.
+      -->example:<input 
+                       name="email"
+                        ngModel-->for particular field validation.
+                        required-->It means that field is mandatory.
+                        email -->the name which gave above should give same name here.
+                        pattern="^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$" -->pattern for validating email.
+                        #modelEmail="ngModel" -->This is our model class which we are using for particular field.
+                        [ngClass]="
+                          modelEmail.invalid && modelEmail.dirty
+                            ? 'is-invalid'
+                            : ''
+                        " />   --->This is our ngClass which we have condition cheking if email is invalid then print invalid or else do nothing.
+        -->after typing above to print it on the webpage,we use the below code.
+          
+                      <div
+                        *ngIf="modelEmail.invalid && modelEmail.dirty"
+                        class="invalid-feedback" --->these are bootstrap classes.
+                      >
+                        Please enter the valid email
+                      </div>                
+-->dirty -means when we are typing invalid pattern ,it will show error on typing itself
+-->touched -means when we type and came out of the field at that time it will show error if we type wrong pattern.
+-->[disabled]="loginForm.invalid" --->if we use then ,when all fields are empty ,it will disable the submit button.Remember type should of submit.
+
+------------------------------>validating particular user data and routing to Home page<----------------------------
+--->After validating ,Now we are storing particular user in local storage and then validating that user is valid or not.
+--->for validating user ,we are writing the below code in loginComponent file.
+                    -->example:error:string="";
+                                constructor(private authService:AuthService,private router :Router){}
+                                onSubmit(loginForm:NgForm){
+
+                                if (this.authService.isValidUser(loginForm.value)) {
+                                    this.router.navigate([''],{replaceUrl:true});
+                                } else {
+                                    this.error="invalid user!!"
+                                }
+                                }
+--->In AuthService file ,we are creating isValidUser function for checking weather that user is valid or not.
+   example:authService.isValidUser(loginForm.value);
+           -->constructor(private storageService: StorageService) {}
+                    isValidUser(user: User): boolean {
+                        console.log(user.email, user.password);
+                        let users: User[] = this.storageService.getAllUsers();//getAllUsers is in storageService file ,we are getting the users.
+                        let isUser = false;
+                        for (let uInLoop of users) {
+                        if (
+                            uInLoop.email === user.email &&
+                            uInLoop.password === uInLoop.password
+                        ) {
+                            isUser = true;
+                            break;
+                        }
+                        console.log(isUser);
+                        }
+                        return isUser;
+                    }
+--->In app.component.ts ,we first loading the users in Lifecycle called ngOnInt() Hook.
+--->Below is the example:constructor(private storageService:storageService){}
+                                ngOnInit(): void {
+                                    this.storageService.loadUsers();
+                                }
+--->To load that users in that app.component.ts ,we should first  create service file called StorageService file.
+--->Below is example:
+             users: User[] = [{ id: 1, email: 'yenugula@User.com', password: 'sravani12345' }];
+             //loading users which are in users array in localStorage.
+                loadUsers() {
+                    if (!localStorage.getItem('users')) {
+                    localStorage.setItem('users', JSON.stringify(this.users));
+                    }
+                } 
+            //getting all the users from localStorage  
+              getAllUsers():User[]{
+              return JSON.parse(localStorage.getItem('users') as string)
+             } 
+            //setting new users data while we are entering in the register form by following method.
+            setAllUsers(registerForm:any){
+            console.log(registerForm.email);
+            this.users.push( {
+                id:this.users.length+1,
+                email: registerForm.email,
+                password: registerForm.password,
+            });
+          localStorage.setItem("users",JSON.stringify(this.users));
+        }       
+ --->After enter new details through registerForm ,it gets sets in localStorage and then it validate through login form.
+ --->In register.component.ts,we write the following code.
+   -->example:constructor(
+                    private storageService: StorageService,
+                    private router: Router,
+                    private authService: AuthService
+                ) {}
+                error: string = '';
+                onSubmit(registerForm: NgForm) {
+                    console.log(registerForm);
+                    console.log(typeof registerForm.value);
+
+                    const value: object = registerForm.value;
+                    this.storageService.setAllUsers(value);
+
+                    if (this.authService.isValidUser(registerForm.value)) {
+                    this.router.navigate(['/login'], { replaceUrl: true });
+                    } else {
+                    this.error = 'invalid user!!';
+                    }
+                }                         

@@ -1,0 +1,2 @@
+complete the ecommerce website and host it through github account
+create admin order page and learn delete operation in admin page
