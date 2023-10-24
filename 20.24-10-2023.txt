@@ -1,0 +1,55 @@
+We have leaarned below concepts today:
+1.Autoboxing and Unboxing-
+  -->Autoboxing--Assigning value to Wrapper class like Integer.ex:Integer a=10;
+  -->Unboxing--Assigning the same Wrapper class value to primitive datatype.
+2.Type Casting -converting one datatype into other datatype.
+  -->Explicit Casting
+  -->implicit Casting
+3.Downcasting-downgrading parent class to child class.  
+4.UpCasting-upcasting -upgrading child class to parent class.
+5.Method OverRiding:-
+  -->These are methods coming from child class but due to method overriding 
+     concept getColor method will print whatever is there in child method.
+        Car c=new Car();
+        c.getColor();
+        c.getWheels();
+6.Method OverLoading:-same method name but different arugments in the same class.
+  -->  void name() {
+        System.out.println("This is a method name with no arugmrnts");
+    }
+    void name(String name) {
+        System.out.println("This is a method name with arugments");
+    }
+    static String returnType() {
+        return "This is a static method in other class";
+    }        
+7.Class:-BluePrint of Object.
+ -->syntax:public class B_Class {}
+8.Object:- Instance of class.
+-->syntax: B_Class b1 = new B_Class();
+9.Interface:-we can achieve multiple inheritence using interfaces.
+  -->No implementation of method.
+  -->syntax: public interface E_Fruit {
+                        int fruitCount=10;
+                        void sellFruit();
+                        void FruitCount();
+                        }
+10.Abstraction:- we use Abstract keyword for achieving Abstraction.
+       -->process of hiding the internal details of application.
+       -->we cannot create the object of abstract and interfaces.
+       -->we should declare abstract keyword for the methods which are in abstract class. 
+       -->we can also  create concrete methods.
+11.Threads:-For achieving multitasking,we use Threads.
+       -->we are extending Thread class to our user defined class and implementing run method.
+       -->public void run(){};
+       -->System.out.println(t1.run() or t1.start());
+ 12.Date:- For Printing Dates we use Date Class by creating Object of Date class.
+        syntax:- Date d1= new Date();
+        SimpleDateFormat s1=new SimpleDateFormat("E yyyy.MM.dd");
+        System.out.println(s1.format(d1));                                   
+13.Exception:-We have two types of Exceptions.
+           -->Checked Exception--Ex:InputMisMatch
+           -->UnChecked Exception--Ex:Arthiemetic Exception. 
+   keywords-->try,catch,finally,throw,throws         
+14.Collections:To manipulate the objects,we use Collections.
+        -->ArrayList                  
