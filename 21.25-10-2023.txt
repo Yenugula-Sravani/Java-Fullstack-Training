@@ -20,6 +20,15 @@ We have leaarned below concepts today:
  Map:-it is having key value pairs somethink like index based.
    Methods-->Keyset-->for accessing the all objects in the Map.
 
+------------------------Comparable and Comparater------------------
+Comparable-->Interface-contains CompareTo method
+          -->Used when applying for single varaible sorting.
+             syntax:Student implements Comparable 
+Comparater-->for multiple varaibles sorting at once,we use this without changing the Student object class.
+          -->We create different classes for different varaibles and implements it to Comparater interface.
+          -->syntax:Collections.sort(Student,new RollNoComparison())
+                    -->This will sort based on the RollNumber of Student Object.               
+
 -----------------------File handlings-------------------------
 -->Types of streams in java:-
       1.Byte Stream--files,images-->(2 types of abstract class)Input Stream(read()),OutputStream(write())..
