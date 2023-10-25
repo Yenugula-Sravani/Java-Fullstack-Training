@@ -1,0 +1,56 @@
+-->We have done some coding questions in the first of the class.
+We have leaarned below concepts today:
+1.Collections :- To manipulate the data ,retrive or add the data
+                 by using Wrapper classes and user-defined Objects like student etc.
+                    -->List-ArrayList,linkedlist
+                    -->set-HashSet,LinkedHashSet,TreeSet
+                    -->Map-HashMap,LinkedHashMap,TreeMap
+
+------------------------List Interface-----------------------
+ 2.ArrayList:-Resizeable Array (Data Structure)-->for storing and fast accessing.
+ 3.linkedlist:-Doubly LinkedList (Data Structure)-->for storing purpose only but slow accessing 
+               because it starts searching from first index.                  
+
+ ------------------------Set Interface-------------------------                   
+ 4.HashSet:- hashing Algorithm(Data Structure)-->Random insertion.
+ 5.LinkedHashMap:-hashing Algorithm(Data Structure)-->insertion order.
+ 6.TreeSet:-Binary search tree(Data Structure)-->sorted order.
+
+ -------------------------Map Interface------------------------
+ Map:-it is having key value pairs somethink like index based.
+   Methods-->Keyset-->for accessing the all objects in the Map.
+
+-----------------------File handlings-------------------------
+1.For reading the file-BufferedReader,new FileReader
+2.For writing the file-FileWriter
+3.For Copying the file
+----------------------junit Testing--------------------------
+-->Before working on junit ,we have created new project with Build as Maven for getting Pom.xml file.
+-->In Pom.xml file , we are adding Junit 5.9.2 Dependency.
+    syntax:<dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.9.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+1.LifeCycle of Testing in Junit:-
+   -->BeforeAll-->In Junit-5,we are adding static keyword on the method signature of AfterAll method.
+   -->BeforeEach-->It is called before each test in the test class.Ex:-Db connections,Creating object of the class which we want to test.
+   -->Test-->The method which we want to test,we will write and make Assertions.
+   -->AfterEach-->It is called after each test is called.Ex:-Closing of Db connections,file closings.
+   -->AfterAll-->In Junit-5,we are adding static keyword on the method signature of AfterAll method.
+2.Annotations:-
+   -->@Test
+   -->@DisplayName
+---------------------DeadLock-----------------------
+-->Two Threads are trying to access the same resources.
+-->To prevent this ,we use following methods.
+1.wait()
+2.notify()
+3.notifyAll()   
+
+
+
