@@ -21,6 +21,11 @@ We have leaarned below concepts today:
    Methods-->Keyset-->for accessing the all objects in the Map.
 
 -----------------------File handlings-------------------------
+-->Types of streams in java:-
+      1.Byte Stream--files,images-->(2 types of abstract class)Input Stream(read()),OutputStream(write())..
+      2.Charater stream-unicode Charater-->Reader,Writer
+-->input Stream-reading from source.
+-->output Stream-writing into destination.      
 1.For reading the file-BufferedReader,new FileReader
 2.For writing the file-FileWriter
 3.For Copying the file
