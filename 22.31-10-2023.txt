@@ -1,0 +1,7 @@
+ArrayList-fast in accessing,slow in adding and removing the elements.Uses Resizeable Array.
+LinkedList-fast in add and remove
+Vector-It is ThreadSafe and uses Arrays.
+Set-Duplicates are not allowed.
+HashSet-hash table,not stored in insertion order.
+LinkedHashSet-it is always inserted in insertion order.
+TreeSet-it is always in sorted order.
