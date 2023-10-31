@@ -5,3 +5,67 @@ Set-Duplicates are not allowed.
 HashSet-hash table,not stored in insertion order.
 LinkedHashSet-it is always inserted in insertion order.
 TreeSet-it is always in sorted order.
+------------------------------JAVA8----------------------------
+(A)Lamda functions:-()->{},Optional
+(B)Functional Interface:-
+    1.Consumer,BiConsumer-accept(),accept(T,A)
+    2.Predicate,BiPredicate-test()
+    syntax of BiPredicate:- BiPredicate<Integer, String> biPredicate = (heightPredicate, genderPredicate) ->
+                                heightPredicate > 150 && genderPredicate.equals("Male");
+    3.Function,BiFunction-apply()
+(C)Stream API:-
+     -->Stream API:-Collections process or proccessing group of objects even Arrays.
+                    The below example will return new list which has only even numbers.
+                    Ex:-list1.stream().filter(i->i%2==0).collect(Collectors.asList);
+  Stream:
+    -->It is a Interface(java.util.Stream).
+    How to create a Stream object or get a Stream:-
+    -->Because Stream is a interface ,we cannot create object directly.
+    -->There are many ways to create object of streams.following are some of them.
+
+    (1)Empty stream:- Stream<Object> EmptyStream=Stream.empty();
+    (2)Ex:-String[] names={"sravani","santhosh"};
+            Stream<String> stream1=Stream.of(names);
+    (3)Stream<Object> stream2=Stream.builder.build(); 
+    (4)IntStream stream=Arrays.stream(new int[]{1,2,3}) 
+                stream.forEach(
+                    (e)->{
+                        sout(e);
+                    }
+                )  
+    (5)List,set:-Most used method for creating objects.
+        Ex:-list1.stream().filter(i->i%2==0).collect(Collectors.asList);   
+
+  Methods:-
+   (1).stream()-->The flow will be one after the other.
+   (2).map()-->To perform Operations on the each and element in the list.
+            -->map(Function)-->That function returns value to that map.
+            Ex:-list<Integers> names=List.of(2,4,6,8);
+             List<Integers> newNames = names.stream().map(e->e.e).collect(Collectors.toList());
+              sout(newNames);//[4,8,36,64]
+         --> For printing newNames one by one using below:-   
+             newNames.stream().forEach(
+                e->{
+                    sout(e)
+                }
+             );
+        -->other shorthand way
+           newNames.stream().forEach(System.out::println);
+   (3).filter()-->Takes Predicate means boolean value fn as parameter and filters based on that predicate.
+               Ex:- list<String> names=List.of("sravani","santhosh");
+                    List<String> newNames = names.stream().filter(e->e.startsWith("S)).collect(Collectors.toList());
+                    sout(newNames);//[sravani,santhosh]
+   (4).Collectors.toMap(Person::getName,Person::getHobbies)-->Prints the name and hobbies of the Person      
+
+   (5).sorted()-->newNames.stream().sorted().forEach(System.out::println);
+
+   (6).min()-->returns minimum value in the given list.
+               Ex:-Integer int=newNames.stream().min(
+                (x,y)->x.CompareTo(y)
+               ).get();
+               sout("minimum number" +int);
+   (7).max()-->returns maximum value in the given list.
+               Ex:-Integer int=newNames.stream().max(
+                (x,y)->x.CompareTo(y)
+               ).get();
+               sout("maximum number" +int);
