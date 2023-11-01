@@ -1,0 +1,46 @@
+Ctrl+shift+enter-->for running  mutliple commands in mysql.
+ctrl+enter-->for running particular command.
+
+DML,DDL,TCL,DQL,DCL-->Types of sql commands.
+DML,DDL,DQL-->Most important for this training.
+DATATYPES-->For String-->Char(size)-->when writing SQL command make sure to write in capital letter.
+Char,Varchar,Tiny,Binary
+BIT,bigInt,double,int
+Date,Timestamp,
+-->BLOB-->file type is stored in this.
+-->LOB-->Large Object
+
+DDL&&DML:-Data Defination Langugage && Data Manipulation Langugage
+    -->How it is to be is ddl.
+    -->create db.
+    -->use db.
+    -->CREATE DATABASE DATABASENAME;
+    -->Most used way to create database:-CREATE DATABASE  IF NOT  EXISTS Student;
+    -->SHOW DATABASES;
+    -->USE DATABASENAME; 
+    -->DROP DATABASE DATABASENAME::-Completely delete the database;  
+    -->DROP TABLE TABLENAME::-Completely delete the table;
+    -->Truncate :- for deleting the table rows and columns;
+    -->ALTER TABLE TABLENAME (ADD/DROP/MODIFY/RENAME) COLUMNNAME;:-Alter works only for columns only.
+        -->ALTER TABLE hotelMenu ADD PLACE VARCHAR(255);
+        -->ALTER TABLE hotelMenu DROP column place;
+        -->ALTER TABLE hotelMenu MODIFY column price int(10);
+        -->ALTER TABLE hotelMenu RENAME column cusine to Fooditems ;
+    --->For inserting the data into tables ,there are two ways.
+    -->One type is below:-INSERT INTO table_name (column1, column2, column3, ...)
+                          VALUES (value1, value2, value3, ...);    
+    -->INSERT INTO hotelMenu VALUES
+        (1,"Briyani",450,true),
+        (2,"Veg Gobi Fried Rice",300,true),
+        (2,"RedWineSangeria",300,false);    
+    -->for adding primary key after creating the table,we can use below:- 
+       ALTER TABLE student ADD PRIMARY KEY(ID);
+    -->for making the columns as not null values after creating tables:-
+       ALTER TABLE student MODIFY column id  int NOT NULL;
+    -->for changing the particular column defalut value after creating the table:-
+       ALTER TABLE Country ALTER state set default "AP";         
+
+       select-LIMIT,ORDER BY,GROUP BY
+       update-
+       joins-left joins,right joins
+       Audit columns,delete flags
