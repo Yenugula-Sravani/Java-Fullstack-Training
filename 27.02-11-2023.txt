@@ -1,0 +1,14 @@
+STORE PROCEEDURE CALL:-DELIMITER,BEGIN,END
+TRIGGERS,VIEWS
+
+Transction management in jdbc:-
+ACID:-
+A:-Atomocity-->Wheather should run all or should not run any queries.
+C:-consistency-->Even when we run for 100tyms queries,it should run without any issues.
+I:-Isolation-->when 2 queries are running simultionosly,then it should run each query in isolation.
+D:-Durability-->even if there is power cuts and server downs,it should work.
+
+Servlets-->
+Index.jsp-->
+SessionStorage--> ex:-new way to check Wheather that user is loggedin or not.
+CokkieeStorage--> ex:-old way to check Wheather that user is loggedin or not.
