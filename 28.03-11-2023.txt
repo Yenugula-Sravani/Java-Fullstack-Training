@@ -1,0 +1,63 @@
+Today started learning JSP and JDBC .
+Index.jsp-->we write java inside the html.
+-->Callback statements,Prepared statements,Dispatcher Servlet,DriverManager..etc
+
+Steps to create the Servlet class:-
+  1.First add all dependencies like servlet,mysql connector,jstl,taglibs for connecting web pages by using mvn repository
+  2.In project structure, Add packages like Model,Controller,DAO,Database for working with files.
+  3.create JSP pages for view of the html.
+  4.To make java class as servlet extend that class to HttpServlet.
+  5.Now map the servlet classes in web.xml using servlet tag and servlet mapping tag.
+  6.In JSP files,we should add below code for saying to the jsp that we are writing java inside the html.
+   --> <%@ page language="java" contentType="text/html; charset=UTF-8"
+	    pageEncoding="UTF-8"%> 
+  7.Based on the form which we are using in the jsp,we will implement that methods in servlet class such as doPost(),doGet().
+  -----------------Started JDBC---------------
+  1.To make connection to Database from Db class,we should use following things:-
+        private static String jdbcURL = "jdbc:mysql://localhost:3306/databaseName";
+        private static String jdbcUsername = "root";
+        private static String jdbcPassword = "root";  
+  2.In getConnection() method, we will write code to which this class to get connect using Classname,DriverManager class.
+       Class.forName("com.mysql.jdbc.Driver");
+       connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);  
+  3.To check Wheather the connection is succesful or not in jsp page ,below is the syntax.
+     --><% Connection connection=DbConnect.getConnection();
+        out.print(connection);%>   
+     -->for above Connection working purpose we should import the following in jsp page.
+        <%@ page import="java.sql.Connection" %>-->This is for Connection class.
+        <%@ page import="org.todo.Connection.DbConnect" %>-->This is for Getting getConnection() method from DbConnect custom class.
+ 4.Now Creating Object of user for storing the user data into mysql.
+   -->User in Model Package Contains name,email,password,id.
+ 5.Now Creating Object of todo for storing the todo data into mysql.
+   -->Todo in Model Package Contains id,todoItem,userId.
+   -->The reason for keeping the userId is for particular user,user specific todos should be there.For tracking of that we are using userId.
+ 6.Now We should create UserDAO class to do all database related logic and should do constructor injection of Dbconnection class for accessing getConnection() method.
+    syntax:- private Connection connection;
+             public userDAO(Connection connection) {
+                    this.connection = connection;
+                }                          
+ 7.Now writing method for inserting registerd data into database by using Prepared statement and executeUpdate().
+   syntax:String sql="insert into user (name,email,password) values(?,?,?)";
+        try {
+            PreparedStatement ps=connection.prepareStatement(sql);
+            ps.setString(1,user.getName());
+            ps.setString(2,user.getEmail());
+            ps.setString(3,user.getPassword());
+            int i=ps.executeUpdate();
+            if (i==1){  
+                f=true;
+            }
+        }
+ 8.Now Creating Servlet class by extending the HttpServlet class and mapping that class in web.xml.
+ 9.In register.jsp,in form tag action name should match with the url pattern which we are usinf for servlet mapping in web.xml file.
+ 10.Based on the method which we passed on the form we use the methods in the servlet.
+ 11.In our example we are using dopost method,in which first we are Getting values from the form and setting them by using setters in the model and pass them to UserDAO to store in database.
+     Ex:-String name=req.getParameter("name");
+         String email=req.getParameter("email");
+         String password=req.getParameter("password"); 
+ 12. Now assinging the above values to the User model by creating the object of user model and passing values through constructor because in our DAO class we have register method that takes user object as a parameter.
+      Ex:-User user=new User(name,email,password);
+ 13.Now creating object of dao class and calling the userREgister method for passing the value to it and check Wheather it is working or not.     
+        Ex:-userDAO dao=new userDAO(DbConnect.getConnection());
+            boolean isUserExists=dao.userRegister(user);        
+
