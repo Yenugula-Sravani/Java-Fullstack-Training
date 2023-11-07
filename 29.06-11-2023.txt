@@ -25,5 +25,14 @@ Today we started learning spring and spring mvc.
 -->By using the above code ,we are telling our servlet class to spring. And assign .jsp file location to it.
 ----------------Two level of accessing form data----------------
 1.Method level:-For accessing the form data,we use the following methods and annotations.
-                Ex:-
-2.Controller Level:-
+                Ex:-@RequestMapping("/")
+2.Controller Level:-For accessing the form data,we use the following methods and annotations.
+                Ex:-@RequestMapping("/")
+                    @Controller
+---------------------------Sending data from Controller to view(JSP)---------------------------
+1.By using two methods to send the data to view.The following are the methods:-
+     Model-addAttribute(String key,Object key)  
+     ModelAndView-addObject(String key,Object value)
+     
+
+
