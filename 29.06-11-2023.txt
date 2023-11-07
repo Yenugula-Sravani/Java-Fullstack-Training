@@ -1,0 +1,29 @@
+Today we started learning spring and spring mvc.
+-----------Steps To create spring boilerplate code--------------
+  -->first we should create dispatcher-servlet.xml file in which we write all stuff related to spring.
+   Ex:-<context:component-scan base-package="com.spring"/>
+  -->component-scan is used for telling spring that to scan all the classes which are under base package.
+    Ex:- <mvc:annotation-driven/>
+  -->We are telling spring that we are going to use annotations method.
+    Ex:-<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/pages"/>
+        <property name="suffix" value=".jsp"/>
+        </bean>
+  -->We are writing above statement for identifiyng the jsp file to spring.
+  Ex:-<servlet>
+        <servlet-name>dispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+        <param-name>contextConfiguration</param-name>
+        <param-value>/WEB-INF/dispatcher-servlet.xml</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>dispatcher</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>        
+-->By using the above code ,we are telling our servlet class to spring. And assign .jsp file location to it.
+----------------Two level of accessing form data----------------
+1.Method level:-For accessing the form data,we use the following methods and annotations.
+                Ex:-
+2.Controller Level:-
