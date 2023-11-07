@@ -1,0 +1,71 @@
+------------------------Started Learning springboot Today----------------------------
+-->To download boilerplate code,we use spring intilizer website for downloading the code and unzip it and import it in the intellij ide.
+-->We have two types of coupling :-
+   1.Tightly coupling:- QuickSortAlgorithm quickSortAlgorithm=new QuickSortAlgorithm();
+                     :-It is Tightly bounded with creating the object,so we cannot access other methods in the class.
+                       //Tightly Coupling--
+                        //BubbleSortAlgorithm bubbleSortAlgorithm=new BubbleSortAlgorithm();
+                        //QuickSortAlgorithm quickSortAlgorithm=new QuickSortAlgorithm();
+   2.Loosly coupling:-For acheiving the Loosly coupling,we use interface injection and construction injection.
+                    :-Create the interface and implements it to the other sorting classes and now in main application
+                    we use the following method.
+                    Ex:-BinarySearchImple binarySearchImple=new BinarySearchImple(new BubbleSortAlgorithm());
+    Ex:-public class BinarySearchImple {
+        //Loosly coupling constructor injection
+        private SortAlgorithm sortAlgorithm;
+        public BinarySearchImple(SortAlgorithm sortAlgorithm) {
+        }
+
+        public int binarySearch(int[] numbers, int numbertosearch){
+            int[] sorted1=sortAlgorithm.sort(numbers);
+            int[] sorted= sortAlgorithm.sort(numbers);
+            return 0;
+        }}
+-->Difference between Spring and Springboot application.        
+-->Inversion Of Control:-Instead of we creating the object,we are giving inversion to spring container. 
+-->Dependency Injection:-       
+-->@Component:-For telling springboot that this class object should be needed,so we keep that class as @Component.
+-->@Autowired:-For acheiving the dependency injection through constructor injection,we use this.
+-->@Primary:-When there are two components for object creation to tell springboot that create the object of that class which has @primary.
+-->@Qualifer:-
+-->@Autowiring by name:-
+-->What is Context and ApplicationContext:-
+-->Below we use context for getting the bean and creating the object of the bean and we will get that bean using getbean.
+     ApplicationContext context=SpringApplication.run(SpringbootbasicsApplication.class);
+	 BinarySearchImple binarySearchImple=context.getBean(BinarySearchImple.class);
+	 int result=binarySearchImple.binarySearch(new int[]{1,2,3,4},2);         
+-->Only using @Autowired,we can create dependency injection without using constructor injection and setter injection. 
+-->By default we have singleton scope that means for multiple objects we have same references.
+-->If we want to have two different references for multiple objects,we use Prototype scope.              
+  Ex:@Scope(ConfigurableBeanFactory.SCOPE_PROPTOTYPE) or @Scope("Prototype") on class level.
+-->Life cycle of bean:-
+   1.@postConstruct
+     Ex:-public void preconstruct(){}
+   2.@preDestory() 
+     Ex:-public void predestory(){}
+-->@ComponentScan
+-->if we don't want to use autowire and constructor injection,but if we want to do dependency injection,
+   we use cdi(context dependency injection).
+   Ex:-<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>inject</artifactId>
+			<version>1</version>
+		</dependency>     
+-->Insted of component we use @Named and Insted of @Autowired we use @Inject.
+--------------------------Spring-----------------------------------
+-->First we should add spring core and spring context dependencies.
+-->@Configuration
+-->@ComponentScan("com.spring")-->base package
+-->AnnotationConfigurationApplication ApplicationContext =new AnnotationConfigurationApplication(customclass.Class)
+----------------------Springboot-----------------------------
+@Repository
+@GetMapping
+@PostMapping
+@PutMapping
+@DeleteMapping
+implements CommandLineRunner-->contains run() method.
+@Requestbody
+@PathVaraibale
+@Autowired
+private JdbcTemplate JdbcTemplate;
+
