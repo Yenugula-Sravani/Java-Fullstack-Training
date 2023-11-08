@@ -1,0 +1,17 @@
+---------------Started building rest API for todo----------------
+1.I have created rest api called todospringboot
+2.First I have created model package,controller package,repository package.
+3.I have todo pojo(Plain Old Java Object) class.
+4.In Controller Class,I have created endpoints for GET,POST,PUT,DELETE.
+5.GET:-For getting all todos from database.
+6.POST:-For adding todos into database.
+7.PUT:-For updating the todos which are in the database.
+8.DELETE:-For Deleting the todods from the database.
+9.I have created Todorepository in which i have done dependency injection of Jdbc template for connecting to database and used that jdbcTemplate for querying purpose.
+10.All database related details i have kept in application.properties file.
+-------------BELOW ARE MY API'S WHICH HAVE TODO'S---------------------
+11.GET:-http://localhost:8080/todo/api/all
+12.GET:-http://localhost:8080/todo/api/all/1
+12.POST:-http://localhost:8080/todo/api/createtodo
+13.PUT:-http://localhost:8080/todo/api/updatetodo
+14.DELETE:-http://localhost:8080/todo/api/delete/1
