@@ -1,0 +1,46 @@
+-------------Today started Hibernate jpa-----------------
+--->First add these dependencies in pom.xml like data jpa,data jdbc
+---------------Below are annotations--------------------
+@PersistenceContext
+EntityManager entityManager
+@Entity-->for telling this model table should be create.
+@NamedQuery-->for telling the name of the query return for that model for findAll.
+@Transctional-->for rollback and commiting the changes in the repository
+@Id-->for saying it is primary key
+@GeneratedValue-->For Auto-Increment
+----------------Predefined methods------------------
+.CreateNameQuery()-->for finding all the db rows which returns TypedQuery<Todo>
+.find()-->for finding through particular Id
+.merge()-->For updating the values and inserting in db
+.remove()-->For deleting the row
+----------Add them in application.properties------------------
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
+spring.jpa.hibernate.ddl-auto=update
+--------------------------SPRING DATA JPA-----------------------------
+--->Add dependencies like data jpa,data jdbc,lombok,validation,mysql-connector,web.
+@Table(name="tablename")
+@Column(name="Columnname")
+@GeneratedValue(strategy=GenerationType.IDENTITY)
+@Entity
+---------------LOMBOK Annotations---------------------
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+-------------JPA Annotations----------
+@Repository
+-------------Streotype Annotations---------
+@RestController
+@RequestMapping("/api")
+@RequestBody
+@PathVaraible
+@Service
+----------------------Started Mapping relations within Entites using hibernate--------------
+@OneToOne-->one teacher is having one address in teacher model
+ @OneToOne(mappedBy = "address")-->
+ @OneToMany
+ @ManyToMany
+ @JoinColumns
+ @JoinColumn
+
+ ---JPQL--------

@@ -1,0 +1,7 @@
+----------------Started Spring security------------------
+Add Security dependency in pom.xml file.
+------Not recommonded method----------
+spring.security.user.name=sravani
+spring.security.user.password=1234
+--------------Advance method not recommonded-------------
+@EnableWebSecurity--at class level
