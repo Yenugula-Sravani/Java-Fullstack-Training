@@ -5,3 +5,20 @@ spring.security.user.name=sravani
 spring.security.user.password=1234
 --------------Advance method not recommonded-------------
 @EnableWebSecurity--at class level
+
+
+---------------------New project-------------
+1.First created 2 models called ContactUser(id,name,password) and Role (id,name)and did @ManyToMany relations.
+2.Role Repository-->(Role,Admin)
+  1.Dervied query-->Role findByName(String name); name should be the same which is in role  model class.
+3.ContactUser Repository-->(Logging users)
+  1.Dervied query-->Optionl<ContactUser> findByName(String name)-->If by chance there is no name in db then by using optional then it won't throw null.
+4.HelloController-->Our customised controller
+   @GetMapping("/hello")
+    1.public String hello(){
+        return"hello world";
+    }
+5.AuthController-->
+  1.@PostMapping("/login) 
+  2.PostMapping("/register")
+     
