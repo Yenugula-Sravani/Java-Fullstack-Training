@@ -1,0 +1,35 @@
+--------------Started Project-Sports and Fitness Equipment Store----------------
+-->Started backend 
+----------Below are the API's----------
+-->Auth Api:-
+   -->Register--http://localhost:8080/api/auth/register
+   -->Login--http://localhost:8080/api/auth/login
+   -->GetAllUserDetailsById--http://localhost:8080/api/user/3
+
+-->ProductApi:-   
+      -->Create Product(Admin)--http://localhost:8080/api/admin/product
+      -->Get All Products(User)--http://localhost:8080/api/product/all
+
+-->CategoryApi:-
+      -->Create Category(Admin)--http://localhost:8080/api/admin/category/createCategory
+      -->Update Category(Admin)--http://localhost:8080/api/admin/category/updateCategory
+
+-->CartApi:-
+      -->Add to cart(User)    --http://localhost:8080/api/cart/usercart
+      -->DeleteProductFromCart--http://localhost:8080/api/cart/1/1    
+
+-->AddressApi:-
+   -->Create Address(User)--http://localhost:8080/api/user/createaddress
+   -->Update Address(user)--http://localhost:8080/api/user/updateaddress
+   -->Delete Address(user)--http://localhost:8080/api/user/address/{id}
+
+-->UserOrdersApi:-
+      -->Place Order(User)--http://localhost:8080/api/order/placeOrder
+      -->Get Orders Of user--http://localhost:8080/api/order/1
+
+-->AdminOrdersApi:-
+     -->UpdateOrderByAdmin--http://localhost:8080/api/admin/order/status  
+     -->GetAllStatusByAdmin--http://localhost:8080/api/admin/order/status/all
+     -->GetAllOrdersOfByAdmin--http://localhost:8080/api/admin/order/all
+     -->GetUserOrdersByAdmin--http://localhost:8080/api/admin/order/1  
+          

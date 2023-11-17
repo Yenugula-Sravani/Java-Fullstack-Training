@@ -1,0 +1,40 @@
+-->Cross-origin Resource Sharing
+
+-->tailwind colors
+-->import fonts from google fonts and font style
+-->override the bootstrap properties on global style.css
+
+-----------Selected Best UI for My project----------------------
+
+-->Colors used In project:-
+       1.Text color:-#8CDA3F(Light parrot Green)
+       2.Bg color:-#0D172A(dark Navy blue)
+       3.Btn colors:-#E8775A(light orange)
+
+-->HOME PAGE FEATURES:-
+  -->Navbar
+  -->Caursol
+  -->Our Products
+  -->Explore Products 
+  -->footer
+
+-->PRODUCT PAGE
+   -->Navbar
+   -->Search box
+   -->filter--expand
+   -->products display in cards
+   -->pagination
+
+-->CART PAGE:-
+    -->One Row--have img and product details and Quantity and price.
+    -->Total Cart Count-Value
+    -->Place order Button-->Goes to order page 
+
+-->ORDER PAGE:-
+    -->Ordered Product details and Quantity in row 
+    -->In side Bar-->Order Summary
+    -->CheckOut button
+
+-->ORDER STATUS PAGE:-
+     -->pending - Out for delivery - Delivered
+     -->Ordered product details

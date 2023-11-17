@@ -1,0 +1,50 @@
+-->we can write api calls in service files for reusable of api calls in components.
+-->ng g s services/exampleservice
+-->We should import HttpCilent Module in root module called app.module.ts file under imports.
+-->Now,we should import in service file and inject in service file.
+Constructor(public http:HttpCilent){}
+getData(){
+    this.http.get("http://localhost:8080/api/user")
+}
+-->get return type is observable data so,we should subscribe to see the data.
+-->6We can call that method and subscribe that method in component file
+
+In component file,we should call getData method and subscribe it in that component.ts file.
+writing it in lifecycel process called ngonint()
+
+-------------Reactive Forms in Angular----------------
+-->ReactiveForms,FormsModule are imported under imports inside app.module.ts
+-->Form groups objects are created in component.ts file for ReactiveForms.
+-->property binding:ex:[form group]="userDetails"
+
+----------Template Driven Forms--------------------
+-->We create form groups,form controls in templates only.
+-->We use ngForm instance in the form tag .Ex:-<form #userDetails="ngForm">
+-->We create formcontrols in templates using name property and ngModel.
+   Ex:<input type="text" name="fname" ngModel/>
+-->(ngSubmit)="userDetails"
+
+-------------------observable---------------------------
+-->Observer object have 3 call back functions like next(),error() and complete() when we subscribe that call.
+-->for getting the data ,we use next() method.
+-->Observer={
+    next:(data:any)=>{
+
+    },
+    error:(error:any)=>{
+
+    },
+    complete:()=>{
+
+    }
+}
+------------------------------------
+-->Angular validations and custom validations
+-->lazy loading
+-->directives
+-->routing
+-->mappings
+-->transctions and exceptions from backend
+-->bootsrtrap,html styling 
+-->endpoints
+-->springboot annotations
